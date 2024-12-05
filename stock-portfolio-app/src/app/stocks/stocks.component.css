@@ -1,0 +1,24 @@
+
+.stock-card {
+  margin: 10px;
+  border: 1px solid #ddd;
+}
+
+.stock-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.stock-card li {
+  margin: 5px 0;
+}
+
+.grid-dividers {
+  margin: 20px 0;
+}
+
+.section-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}

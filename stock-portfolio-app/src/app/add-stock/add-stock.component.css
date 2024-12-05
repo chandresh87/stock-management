@@ -1,0 +1,33 @@
+.desc{
+  padding: 15px;
+  width: 100%;
+  height: 40px;
+  overflow: scroll;
+  border: 1px solid #ccc;
+}
+
+
+
+ .hide {
+   display: none;
+ }
+
+.performance mat-grid-tile-header, .detail mat-grid-tile-header {
+  font-weight: bold;
+  padding: 10px;
+}
+
+.performance .mat-grid-tile, .detail .mat-grid-tile, .buy .mat-grid-tile {
+  padding: 5px;
+}
+
+
+.buy div {
+  text-align: right;
+  font-weight: bold;
+}
+
+
+form {
+  padding: 15px;
+}

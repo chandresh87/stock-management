@@ -1,0 +1,16 @@
+<form >
+  <input type="text"
+         placeholder="Search for a stock"
+         [formControl]="control"
+         [matAutocomplete]="auto" (keyup)="searchString($event)"
+        >
+
+  <mat-autocomplete #auto="matAutocomplete">
+    <ul *ngFor="let stock of stockNames" style="list-style-type: none; padding: 0;">
+      <mat-option (click)="handleSelectedStock(stock)" [value]="stock"
+                 >
+        {{ stock }}
+      </mat-option>
+    </ul>
+  </mat-autocomplete>
+</form>

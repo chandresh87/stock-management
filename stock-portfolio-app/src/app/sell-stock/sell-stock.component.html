@@ -1,0 +1,32 @@
+<div class="container">
+
+<h2 mat-dialog-title>Sell Stock</h2>
+
+  <form [formGroup]="portfolioFormGroup">
+<mat-dialog-content>
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>Symbol</mat-grid-tile>
+    <mat-grid-tile> {{data.row.symbol}} </mat-grid-tile>
+    <mat-grid-tile>Price</mat-grid-tile>
+    <mat-grid-tile>{{data.row.price}}</mat-grid-tile>
+    <mat-grid-tile>
+      <mat-label>Quantity</mat-label>
+    </mat-grid-tile>
+
+    <mat-grid-tile><input type="number"  matInput formControlName="quantity"></mat-grid-tile>
+      <mat-error  *ngIf="portfolioFormGroup.controls.quantity.touched || portfolioFormGroup.hasError('inValidQuantity', 'quantity')">Quantity is not valid</mat-error>
+
+<!--    <mat-grid-tile>-->
+<!--      <button mat-button mat-dialog-close >Cancel</button>-->
+<!--    </mat-grid-tile>-->
+<!--    <mat-grid-tile>-->
+<!--      <button mat-raised-button >Sell</button></mat-grid-tile>-->
+  </mat-grid-list>
+</mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="sellStock()" [disabled]="!portfolioFormGroup.valid">Sell</button>
+  </mat-dialog-actions>
+  </form>
+</div>

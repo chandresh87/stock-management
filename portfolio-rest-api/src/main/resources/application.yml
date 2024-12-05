@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:stock;INIT=CREATE SCHEMA IF NOT EXISTS stock;
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: none
+  h2:
+    console.enabled: true
+    h2:
+      path: /h2-console
+      settings.trace: false
+      settings.web-allow-others: false
+
+stock:
+  api:
+    host: https://www.alphavantage.co/query
+    api-key: '4L9O02IDHZV2X6Q2'

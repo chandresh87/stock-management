@@ -1,0 +1,29 @@
+<div class="layout-container">
+  <mat-toolbar color="primary" class="app-header"
+               style="display: flex; justify-content: space-between; align-items: center;">
+    <button mat-icon-button aria-label="Menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 style="margin: 0;">Stock Management App</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container style="height: calc(100vh - 128px);">
+
+    <mat-sidenav #sidenav [opened]="true" mode="side">
+      <mat-nav-list>
+        <a *ngFor="let route of routes"
+           mat-list-item
+           [routerLink]="route.path" style="display: block; padding: 8px; text-decoration: none;">{{ route.title }}</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content style="padding: 16px;">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+
+  <mat-toolbar color="primary" class="app-bottom" style="text-align: center;">
+    <h2 style="margin: 0;">Terms and conditions</h2>
+  </mat-toolbar>
+</div>

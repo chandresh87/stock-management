@@ -1,0 +1,98 @@
+
+<app-spinner-component *ngIf="loading"></app-spinner-component>
+
+<div  [class.hide]="loading">
+<form [formGroup]="portfolioFormGroup">
+<section class="performance">
+    <mat-grid-tile-header>Performance</mat-grid-tile-header>
+<mat-grid-list cols="4" rowHeight="30px">
+
+  <mat-grid-tile >Symbol: </mat-grid-tile>
+  <mat-grid-tile>{{stockMetaData.symbol}}</mat-grid-tile>
+  <mat-grid-tile >Open: </mat-grid-tile>
+  <mat-grid-tile>{{stockMetaData.open}}</mat-grid-tile>
+  <mat-grid-tile>High: </mat-grid-tile>
+  <mat-grid-tile> {{stockMetaData.high}}</mat-grid-tile>
+  <mat-grid-tile>Low: </mat-grid-tile>
+  <mat-grid-tile>{{stockMetaData.low}}</mat-grid-tile>
+  <mat-grid-tile>Previous Close: </mat-grid-tile>
+  <mat-grid-tile> {{stockMetaData.previousClose}}</mat-grid-tile>
+  <mat-grid-tile>Volume: </mat-grid-tile>
+  <mat-grid-tile>{{stockMetaData.volume}}</mat-grid-tile>
+  <mat-grid-tile>52 Week Low: </mat-grid-tile>
+  <mat-grid-tile>{{companyDetails._52WeekLow}}</mat-grid-tile>
+  <mat-grid-tile>52 Week High: </mat-grid-tile>
+  <mat-grid-tile>{{companyDetails._52WeekHigh}}</mat-grid-tile>
+  <mat-grid-tile>200 Day Moving Average: </mat-grid-tile>
+  <mat-grid-tile>{{companyDetails._200DayMovingAverage}}</mat-grid-tile>
+</mat-grid-list>
+</section>
+
+<mat-divider></mat-divider>
+
+<section class="detail">
+<mat-grid-tile-header>Company Details</mat-grid-tile-header>
+
+<mat-grid-list cols="4" rowHeight="50px">
+  <mat-grid-tile>Name: </mat-grid-tile>
+  <mat-grid-tile>{{companyDetails.name}}</mat-grid-tile>
+  <mat-grid-tile>Asset Type: </mat-grid-tile>
+  <mat-grid-tile>{{companyDetails.assetType}}</mat-grid-tile>
+  <mat-grid-tile>Exchange: </mat-grid-tile>
+  <mat-grid-tile>{{companyDetails.exchange}}</mat-grid-tile>
+  <mat-grid-tile>Currency: </mat-grid-tile>
+  <mat-grid-tile>{{companyDetails.currency}}</mat-grid-tile>
+  <mat-grid-tile>Country: </mat-grid-tile>
+  <mat-grid-tile>{{companyDetails.country}}</mat-grid-tile>
+  <mat-grid-tile>Sector: </mat-grid-tile>
+  <mat-grid-tile>{{companyDetails.sector}}</mat-grid-tile>
+  <mat-grid-tile>Industry: </mat-grid-tile>
+  <mat-grid-tile>{{companyDetails.industry}}</mat-grid-tile>
+  <mat-grid-tile>Address: </mat-grid-tile>
+  <mat-grid-tile>{{companyDetails.address}}</mat-grid-tile>
+
+
+  <mat-grid-tile>Description: </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="desc">
+      {{companyDetails.description}}
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+
+</section>
+
+
+
+
+<mat-divider></mat-divider>
+
+<section class="buy">
+  <mat-grid-list cols="4" rowHeight="50px">
+
+    <mat-grid-tile>
+    <div> Quantity</div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <input type="number"  matInput formControlName="quantity">
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      Price
+    </mat-grid-tile>
+    <mat-grid-tile>
+
+      <fieldset >{{stockMetaData.price}}</fieldset>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <button mat-raised-button (click)="buyStock()" [disabled]="!portfolioFormGroup.valid">
+        Buy
+      </button>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+
+</section>
+</form>
+
+</div>

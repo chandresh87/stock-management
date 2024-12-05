@@ -1,0 +1,14 @@
+.transparent .mat-mdc-dialog-container {
+  --mdc-dialog-container-color: rgba(0, 0, 0, 0.0);
+}
+
+.transparent .mat-mdc-dialog-surface {
+  box-shadow: none !important;
+}
+
+.mat-spinner {
+  width: 50px;
+  height: 50px;
+  stroke: #3f51b5; /* Adjust the color */
+  margin: 20px auto;
+}

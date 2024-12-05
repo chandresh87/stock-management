@@ -1,0 +1,80 @@
+
+
+<div>
+  <app-stock-search (stockSymbolEvent)="addStock($event)"></app-stock-search>
+</div>
+
+<div *ngIf="showAddComponent">
+  <app-add-stock [stockName]="selectedStockSymbol"></app-add-stock>
+</div>
+
+<div *ngIf="!showAddComponent">
+  <div>
+    <div class="section-title">Top Gainer</div>
+    <mat-grid-list [gridCols]="{xs: 1, sm: 2, md: 3, lg: 4, xl: 5}" rowHeight="200px">
+      <ul *ngFor="let gainer of topGainers | slice:0:5">
+        <mat-grid-tile>
+          <mat-card appearance="outlined" class="stock-card">
+            <mat-card-content>
+              <ul>
+                <li>Ticker: {{ gainer.ticker }}</li>
+                <li>Price: {{ gainer.price }}</li>
+                <li>Change Amount: {{ gainer.changeAmount }}</li>
+                <li>Change Percentage: {{ gainer.changePercentage }}</li>
+              </ul>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+      </ul>
+    </mat-grid-list>
+  </div>
+  <div class="grid-dividers">
+    <mat-divider></mat-divider>
+  </div>
+
+  <div>
+    <div class="section-title">Top Looser</div>
+    <mat-grid-list [gridCols]="{xs: 1, sm: 2, md: 3, lg: 4, xl: 5}" rowHeight="100px">
+      <ul *ngFor="let loser of topLosers | slice:0:5">
+        <mat-grid-tile>
+          <mat-card appearance="outlined" class="stock-card">
+            <mat-card-content>
+              <ul>
+                <li>Ticker: {{ loser.ticker }}</li>
+                <li>Price: {{ loser.price }}</li>
+                <li>Change Amount: {{ loser.changeAmount }}</li>
+                <li>Change Percentage: {{ loser.changePercentage }}</li>
+              </ul>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+      </ul>
+    </mat-grid-list>
+  </div>
+  <div class="grid-dividers">
+    <mat-divider></mat-divider>
+  </div>
+
+  <div>
+    <div class="section-title">Most Actively Traded</div>
+    <mat-grid-list [gridCols]="{xs: 1, sm: 2, md: 3, lg: 4, xl: 5}" rowHeight="100px">
+      <ul *ngFor="let mostActive of mostActivelyTraded | slice:0:5">
+        <mat-grid-tile>
+          <mat-card appearance="outlined" class="stock-card">
+            <mat-card-content>
+              <ul>
+                <li>Ticker: {{ mostActive.ticker }}</li>
+                <li>Price: {{ mostActive.price }}</li>
+                <li>Change Amount: {{ mostActive.changeAmount }}</li>
+                <li>Change Percentage: {{ mostActive.changePercentage }}</li>
+              </ul>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+      </ul>
+    </mat-grid-list>
+  </div>
+</div>
+<div class="grid-dividers">
+  <mat-divider></mat-divider>
+</div>
