@@ -146,6 +146,7 @@ public class PortfolioServiceImpl implements PortfolioService {
 
 
     private void sellStock(UpdatePortfolioBO updatePortfolioBO) {
+        logger.info("sellStock: {}", updatePortfolioBO);
         Optional<PortfolioEntity> portfolioEntityOptional = portfolioRepository.findById(updatePortfolioBO.getSymbol());
         if(portfolioEntityOptional.isPresent()) {
             PortfolioEntity portfolio = portfolioEntityOptional.get();

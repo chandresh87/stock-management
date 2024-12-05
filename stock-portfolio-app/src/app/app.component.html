@@ -1,10 +1,11 @@
 <div class="layout-container">
   <mat-toolbar color="primary" class="app-header"
-               style="display: flex; justify-content: space-between; align-items: center;">
+               style="display: flex; justify-content: space-between; align-items: flex-start;"      >
     <button mat-icon-button aria-label="Menu icon">
       <mat-icon>menu</mat-icon>
     </button>
-    <h1 style="margin: 0;">Stock Management App</h1>
+    <h6 style="font-style: italic; text-align: left;">Welcome: {{ userName }}</h6>
+    <h1 style="margin: 0; text-align: right;">Stock Management App</h1>
   </mat-toolbar>
 
   <mat-sidenav-container style="height: calc(100vh - 128px);">
